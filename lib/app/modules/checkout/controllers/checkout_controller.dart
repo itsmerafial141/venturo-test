@@ -40,13 +40,11 @@ class CheckoutController extends GetxController
 
   void _initiaalizeData() async {
     menus = [];
-
     order = OrderModel(
       nominalDiskon: "0",
       nominalPesanan: "0",
       items: [],
     );
-
     await _menusProvider.menus().then((response) {
       if (response.isNotEmpty) {
         menus = response;
@@ -244,7 +242,7 @@ class CheckoutController extends GetxController
 
   void _cancel() async {
     MyLoading.loading();
-    await _menusProvider.cancel(id: "0").then((value) {
+    await _menusProvider.cancel(id: "000").then((value) {
       closeDialog();
       Get.offAllNamed(AppPages.CHECKOUT);
       MyRawSnackBar.rawSanckBar(

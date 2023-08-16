@@ -48,8 +48,12 @@ class MenusProvider extends ApiService {
   Future<String> order({required OrderModel order}) async {
     try {
       log("POST Order");
-      var response = await post(EndPoint.ORDER, order.toJson());
-      log(response.body.toString());
+      var body = order.toJson();
+      body.addAll({
+        "id": "000",
+      });
+      log(order.toJson().toString());
+      var response = await post(EndPoint.ORDER, body);
       if (response.body['status_code'] != 200) {
         return Future.error(response.body['message']);
       } else {

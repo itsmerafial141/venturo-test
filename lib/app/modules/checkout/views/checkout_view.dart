@@ -3,16 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
-import 'package:venturo/app/widgets/my_default_button_widget.dart';
 import 'package:venturo/app/widgets/my_divider_widget.dart';
-import 'package:venturo/core/colors/color_swatch.dart';
 import 'package:venturo/core/colors/colors.dart';
-import 'package:venturo/core/fonts/fonts.dart';
 import 'package:venturo/core/utils/extensions/int_extension.dart';
 import 'package:venturo/core/utils/extensions/num_extension.dart';
 import 'package:venturo/core/utils/extensions/string_extension.dart';
 import 'package:venturo/core/values/const/double_const.dart';
 
+import '../../../../core/colors/color_swatch.dart';
+import '../../../../core/fonts/fonts.dart';
+import '../../../widgets/my_default_button_widget.dart';
 import '../controllers/checkout_controller.dart';
 import '../widgets/card_item_widget.dart';
 
