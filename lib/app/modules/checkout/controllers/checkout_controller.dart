@@ -74,7 +74,7 @@ class CheckoutController extends GetxController
               closeDialog();
             },
             onOKPressed: () {
-              Get.offAllNamed(AppPages.CHECKOUT);
+              _cancel();
             },
           ),
         );
@@ -222,5 +222,41 @@ class CheckoutController extends GetxController
       closeDialog();
     }
     change(menus, status: RxStatus.success());
+  }
+
+  void orderMenu() async {
+    MyLoading.loading();
+    await _menusProvider.order(order: order).then((value) {
+      closeDialog();
+      Get.offAllNamed(AppPages.CHECKOUT);
+      MyRawSnackBar.rawSanckBar(
+        statusCode: RespCode.SUCCESS,
+        message: value,
+      );
+    }).onError((error, stackTrace) {
+      closeDialog();
+      MyRawSnackBar.rawSanckBar(
+        statusCode: RespCode.ERROR,
+        message: error.toString(),
+      );
+    });
+  }
+
+  void _cancel() async {
+    MyLoading.loading();
+    await _menusProvider.cancel(id: "0").then((value) {
+      closeDialog();
+      Get.offAllNamed(AppPages.CHECKOUT);
+      MyRawSnackBar.rawSanckBar(
+        statusCode: RespCode.SUCCESS,
+        message: value,
+      );
+    }).onError((error, stackTrace) {
+      closeDialog();
+      MyRawSnackBar.rawSanckBar(
+        statusCode: RespCode.ERROR,
+        message: error.toString(),
+      );
+    });
   }
 }

@@ -302,7 +302,7 @@ AppBarTheme _appBarTheme(bool isDark) {
     elevation: 0,
     toolbarTextStyle: const TextTheme().bodyLarge,
     titleTextStyle: CustomFonts.montserratBold16.copyWith(
-      color: CustomColor.WHITE,
+      color: CustomSwatch.TEXT,
     ),
   );
 }

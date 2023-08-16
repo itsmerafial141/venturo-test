@@ -23,7 +23,6 @@ class CheckoutView extends GetView<CheckoutController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        toolbarHeight: 0,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.dark,
           systemNavigationBarIconBrightness: Brightness.dark,
@@ -31,6 +30,21 @@ class CheckoutView extends GetView<CheckoutController> {
           systemNavigationBarColor: Colors.white,
           systemNavigationBarDividerColor: Colors.white,
         ),
+        title: const Text("Pesanan"),
+        centerTitle: true,
+        actions: [
+          Obx(
+            () => controller.isCheckout.value
+                ? IconButton(
+                    onPressed: controller.orderMenu,
+                    icon: const Icon(
+                      Icons.done,
+                      color: CustomColor.Glacier,
+                    ),
+                  )
+                : const SizedBox(),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
