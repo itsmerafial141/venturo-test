@@ -86,7 +86,7 @@ class _CardItemState extends State<CardItem> {
                   imageUrl: widget.data.gambar,
                   width: 75,
                   height: 75,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   placeholder: (context, url) {
                     return const Skelaton(
                       height: 75,
