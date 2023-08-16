@@ -1,0 +1,41 @@
+name: venturo
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=3.0.6 <4.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  get_storage: ^2.1.1
+  google_fonts: ^5.1.0
+  smooth_page_indicator: ^1.0.0+2
+  auto_size_text: ^3.0.0
+  flutter_svg: ^2.0.7
+  shimmer: ^3.0.0
+  pull_to_refresh: ^2.0.0
+  cached_network_image: ^3.2.3
+  path_provider: ^2.0.14
+  collection: ^1.17.1
+  lottie: ^2.4.0
+  permission_handler: ^10.4.3
+  image_picker: ^1.0.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0
+  dotted_border: ^2.0.0+3
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/json/
+  uses-material-design: true
