@@ -22,6 +22,7 @@ class CheckoutView extends GetView<CheckoutController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 50,
         backgroundColor: Colors.white,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.dark,
@@ -49,7 +50,7 @@ class CheckoutView extends GetView<CheckoutController> {
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: SizedBox(
-          height: 100.sh(context) - 200,
+          height: 100.sh(context) - 200 - 50,
           width: 100.sw(context),
           child: controller.obx(
             (data) => ListView.separated(
